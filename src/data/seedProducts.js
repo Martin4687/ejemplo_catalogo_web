@@ -1,0 +1,128 @@
+import { uid } from '../config';
+
+// Catálogo inicial de ejemplo. Se carga una sola vez, la primera vez que se abre
+// la app (cuando la base de datos local está vacía). Después de eso, todo lo que
+// agregues, edites o borres desde el Panel Admin queda guardado en IndexedDB
+// y este archivo ya no se vuelve a usar.
+// Las imágenes son de un servicio público de imágenes de ejemplo (picsum.photos);
+// reemplázalas por las fotos reales de tu ropa desde el Panel Admin (botón "Subir imagen").
+
+const img = (seed) => `https://picsum.photos/seed/${seed}/600/800`;
+
+export function buildSeedProducts() {
+  const now = Date.now();
+  return [
+    {
+      id: uid(),
+      name: 'Polera Oversize Grafiti',
+      category: 'Poleras',
+      description: 'Polera de algodón pesado 220gsm, corte oversize, estampado grafiti en pecho y espalda.',
+      price: 89,
+      salePrice: null,
+      colors: ['Negro', 'Blanco'],
+      sizeStock: { S: 6, M: 10, L: 8, XL: 3 },
+      image: img('polera-grafiti'),
+      featured: true,
+      isNew: true,
+      createdAt: now - 1000,
+    },
+    {
+      id: uid(),
+      name: 'Hoodie Cancha Classic',
+      category: 'Hoodies',
+      description: 'Buzo con capucha, forro polar interior, bolsillo canguro y logo bordado.',
+      price: 165,
+      salePrice: 139,
+      colors: ['Gris jaspe', 'Negro', 'Vino'],
+      sizeStock: { S: 4, M: 12, L: 9, XL: 5, XXL: 2 },
+      image: img('hoodie-classic'),
+      featured: true,
+      isNew: false,
+      createdAt: now - 2000,
+    },
+    {
+      id: uid(),
+      name: 'Cargo Pants Street',
+      category: 'Pantalones',
+      description: 'Pantalón cargo de tela drill, bolsillos laterales y cintura ajustable con cordón.',
+      price: 145,
+      salePrice: null,
+      colors: ['Verde militar', 'Beige', 'Negro'],
+      sizeStock: { XS: 2, S: 5, M: 7, L: 6, XL: 0 },
+      image: img('cargo-pants'),
+      featured: false,
+      isNew: true,
+      createdAt: now - 3000,
+    },
+    {
+      id: uid(),
+      name: 'Chaqueta Denim Oversize',
+      category: 'Chaquetas',
+      description: 'Chaqueta de mezclilla lavada, corte oversize, parches removibles incluidos.',
+      price: 210,
+      salePrice: 179,
+      colors: ['Azul claro', 'Negro'],
+      sizeStock: { S: 3, M: 6, L: 4, XL: 2 },
+      image: img('chaqueta-denim'),
+      featured: true,
+      isNew: false,
+      createdAt: now - 4000,
+    },
+    {
+      id: uid(),
+      name: 'Vestido Corto Retro',
+      category: 'Vestidos',
+      description: 'Vestido corto de corte A, estampado retro, tela liviana ideal para verano.',
+      price: 120,
+      salePrice: null,
+      colors: ['Amarillo', 'Estampado'],
+      sizeStock: { XS: 4, S: 6, M: 5, L: 2 },
+      image: img('vestido-retro'),
+      featured: false,
+      isNew: true,
+      createdAt: now - 5000,
+    },
+    {
+      id: uid(),
+      name: 'Zapatillas Urban Runner',
+      category: 'Calzado',
+      description: 'Zapatillas urbanas con suela de goma antideslizante y malla transpirable.',
+      price: 250,
+      salePrice: null,
+      colors: ['Blanco', 'Negro/Lima'],
+      sizeStock: { S: 3, M: 8, L: 7, XL: 3 },
+      image: img('zapatillas-urban'),
+      featured: true,
+      isNew: false,
+      createdAt: now - 6000,
+    },
+    {
+      id: uid(),
+      name: 'Gorra Snapback Cancha',
+      category: 'Accesorios',
+      description: 'Gorra plana ajustable, bordado 3D en frente, visera plana.',
+      price: 65,
+      salePrice: 49,
+      colors: ['Negro', 'Blanco', 'Rojo'],
+      sizeStock: { M: 15 },
+      image: img('gorra-snapback'),
+      featured: false,
+      isNew: false,
+      createdAt: now - 7000,
+    },
+    {
+      id: uid(),
+      name: 'Riñonera Track',
+      category: 'Accesorios',
+      description: 'Riñonera de nylon resistente al agua con dos compartimentos y correa ajustable.',
+      price: 55,
+      salePrice: null,
+      colors: ['Negro', 'Gris'],
+      sizeStock: { M: 1 },
+      image: img('rinonera-track'),
+      featured: false,
+      isNew: true,
+      createdAt: now - 8000,
+    },
+  ];
+}
