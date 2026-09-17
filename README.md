@@ -1,4 +1,4 @@
-# BOLTEX — Catálogo de ropa urbana juvenil
+# CANCHA — Catálogo de ropa urbana juvenil
 
 Catálogo web para una tienda de ropa juvenil, hecho con **React + Vite**, con
 todos los datos guardados en el propio navegador usando **IndexedDB** (con

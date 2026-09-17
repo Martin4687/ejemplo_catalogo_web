@@ -1,7 +1,7 @@
 // Configuración central de la tienda.
 // Cambia estos valores para adaptar el catálogo a tu marca sin tocar el resto del código.
 
-export const STORE_NAME = 'BOLTEX';
+export const STORE_NAME = 'CANCHA';
 export const STORE_TAGLINE = 'Ropa urbana juvenil';
 export const CURRENCY = 'Bs';
 
